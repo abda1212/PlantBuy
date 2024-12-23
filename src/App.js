@@ -1,15 +1,17 @@
-import Categories from "./components/Categories";
+import HomePage from "./components/HomePage";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ItemList from "./components/ItemList";
 
 const App = () => {
   return (
-    
-<div className="w-full flex flex-wrap justify-between gap-4">
-  <Categories title="Hats" imgsrc="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUL3pET-BblsLO62pglbzbKsVji5_2ysBng&s'" />
-  <Categories title="Sneakers" imgsrc="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUL3pET-BblsLO62pglbzbKsVji5_2ysBng&s'" />
-  <Categories title="Jackets" imgsrc="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUL3pET-BblsLO62pglbzbKsVji5_2ysBng&s'" />
-  <Categories title="Mens" isLarge imgsrc="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUL3pET-BblsLO62pglbzbKsVji5_2ysBng&s'" />
-  <Categories title="Womens" isLarge imgsrc="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPUL3pET-BblsLO62pglbzbKsVji5_2ysBng&s'" />
-</div>
+    <div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/items" element={<ItemList />} />
+      </Routes>
+    </Router>
+    </div>
 
   );
 };
