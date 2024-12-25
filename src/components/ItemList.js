@@ -37,7 +37,9 @@ function ItemList() {
           price={item.price}
           size={item.size}
           img={item.imgUrl}
+          
         />
+        
       ))}
     </div>
   </div>

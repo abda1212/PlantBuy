@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CustomCard = ({ name, size, price, img }) => {
+
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    const product = {name, price, size, img }; // Package product details
+    navigate("/product-detail", { state: product }); // Pass state to PDP
+  };
   return (
-    <motion.div
+    <motion.div onClick={handleCardClick}
       className="rounded-lg shadow-md overflow-hidden bg-white"
       // Framer Motion Hover Effect
       whileHover={{
@@ -40,18 +48,20 @@ const CustomCard = ({ name, size, price, img }) => {
           }}
         >
           {name}
+          
         </motion.h3>
         <p className="text-gray-500">{size}</p>
         <motion.p
           className="font-bold text-xl"
           whileHover={{
-            color: "#3182ce", // Subtle color shift on hover
+            color: "green", // Subtle color shift on hover
           }}
           transition={{
             duration: 0.2,
           }}
         >
           {price}
+          
         </motion.p>
       </div>
     </motion.div>
