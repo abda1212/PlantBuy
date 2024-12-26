@@ -28,7 +28,7 @@ function ItemList() {
   }, []);
   return (
     <div className="px-4 py-8">
-    <h1 className="text-2xl font-bold mb-6">{title}</h1>
+    <h1 className="text-2xl font-bold mb-6 text-green-600">{title}</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
       {items.map((item, index) => (
         <CustomCard

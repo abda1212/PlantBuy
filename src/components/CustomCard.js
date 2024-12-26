@@ -41,7 +41,7 @@ const CustomCard = ({ name, size, price, img }) => {
         <motion.h3
           className="font-bold text-lg"
           whileHover={{
-            color: "#1a202c", // Slightly darker color on hover
+            color: "green", // Slightly darker color on hover
           }}
           transition={{
             duration: 0.2,
@@ -50,7 +50,7 @@ const CustomCard = ({ name, size, price, img }) => {
           {name}
           
         </motion.h3>
-        <p className="text-gray-500">{size}</p>
+        <p className="text-green-500">{size}</p>
         <motion.p
           className="font-bold text-xl"
           whileHover={{
