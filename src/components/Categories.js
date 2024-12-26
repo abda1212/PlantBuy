@@ -13,7 +13,7 @@ function Categories({ title, isLarge, imgsrc, id }) {
 <div
 
   className={`min-w-[30%] ${
-    isLarge ? "h-[380px]" : "h-60"
+    isLarge ? "h-[250px]" : "h-60"
   } flex flex-1 items-center justify-center border border-black mx-[7.5px] mb-4 overflow-hidden hover:cursor-pointer`}
 >
   <div className="relative group w-full h-full">
@@ -27,7 +27,7 @@ function Categories({ title, isLarge, imgsrc, id }) {
     {/* Title and Shop Now */}
     <div onClick={()=>{goToItemsList()}} className="absolute inset-0 flex items-center justify-center">
       <div className="bg-white border border-black opacity-70 px-6 py-4 flex flex-col items-center justify-center group-hover:opacity-90">
-        <h2 className="font-bold text-lg text-gray-700">{title}</h2>
+        <h2 className="font-bold text-lg text-green-600">{title}</h2>
         <p className="text-sm font-light">Shop Now</p>
       </div>
     </div>
