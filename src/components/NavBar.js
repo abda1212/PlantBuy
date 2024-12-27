@@ -3,11 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Flowers } from '../images/flower-svgrepo-com.svg';
 import { useCart } from "./CartContext";
 import { motion } from "framer-motion"
+import { useAuth } from './AuthContext';
+import { signOut } from '@firebase/auth';
+import { auth } from './FireBaseConfig';
 
 function NavBar() {
+const { currentUser } = useAuth();
   const navigate = useNavigate();
   const { cart } = useCart();
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      console.log('User logged out successfully!');
+      navigate('/login')
+    } catch (error) {
+      console.error('Logout error:', error.message);
+    }
+  };
   return (
 <div className="flex justify-between items-center px-8 py-4">
         {/* Left Side - Logo */}
@@ -67,8 +80,11 @@ function NavBar() {
           </button>
 
           {/* Login Button */}
-          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200">
-            Login
+          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200"
+            onClick={handleLogout} // Navigate to the homepage
+
+          >
+          {currentUser ? 'Logout' : 'Login'}
           </button>
         </div>
       </div>

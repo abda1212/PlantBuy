@@ -1,14 +1,17 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
 import { useCart } from "./CartContext";
+import { useAuth } from './AuthContext';
 
 function ProductDetail() {
+    const { currentUser } = useAuth();
     const { addToCart } = useCart();
     const location = useLocation();
     const product = location.state; // Access the passed state
   
     if (!product) return <div>No product details available</div>;
-  
+   
+ 
     return (
         <div className="p-8">
       {/* Main Product Layout */}
@@ -27,11 +30,19 @@ function ProductDetail() {
           <h1 className="text-3xl font-bold">{product.name}</h1>
           <p className="text-2xl font-semibold text-gray-800">{product.price}</p>
           <p className="text-lg text-gray-600">Size: {product.size}</p>
-          <button onClick={() => {console.log(product);  addToCart(product)}}
- 
-           className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition duration-200">
+          <button
+           onClick={() => {
+            if (!currentUser) { // Check if the user is not logged in
+          alert("You must be logged in to add items to the cart.");
+          } else {
+          addToCart(product); // Add to cart if logged in
+    }
+           }}
+          className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition duration-200"
+            >
             Add to Cart
-          </button>
+            </button>
+
         </div>
       </div>
 
