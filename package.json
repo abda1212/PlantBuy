@@ -1,40 +1,29 @@
 {
-  "name": "crwn-clothing",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@firebase/auth": "^1.8.1",
-    "@mui/icons-material": "^6.3.0",
-    "@mui/material": "^6.3.0",
-    "@stripe/react-stripe-js": "^3.1.1",
-    "@stripe/stripe-js": "^5.4.0",
-    "@testing-library/jest-dom": "5.16.1",
-    "@testing-library/react": "12.1.2",
-    "@testing-library/user-event": "13.5.0",
-    "dotenv": "^16.4.7",
-    "firebase": "^11.1.0",
-    "framer-motion": "^11.15.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.1",
-    "react-scripts": "5.0.0",
-    "react-social-icons": "^6.18.0",
-    "uuid": "^11.0.3",
-    "web-vitals": "2.1.4"
-  },
+  "name": "flowershop-firestore-seeder",
+  "version": "1.0.0",
+  "description": "Script för att ladda upp kategori- och produktdata till Firebase Firestore",
+  "main": "seed.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed": "node seed.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@firebase/auth": "^1.10.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "firebase": "^11.7.2",
+    "firebase-admin": "^11.11.1",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "react-scripts": "^5.0.1",
+    "react-social-icons": "^6.10.0",
+    "uuid": "^9.0.1",
+    "web-vitals": "^3.5.0"
   },
   "browserslist": {
     "production": [
@@ -47,10 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
   }
 }

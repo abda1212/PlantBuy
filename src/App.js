@@ -7,26 +7,27 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import AuthScreen from "./components/AuthScreen";
 import { AuthProvider } from './components/AuthContext';
+import { CartProvider } from './components/CartContext';
 
 const App = () => {
   return (
     <AuthProvider>
-    <div className=" bg-amber-50 bg-cover min-h-screen">
-    <Router>
-    <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/items" element={<ItemList />} />
-        <Route path="/product-detail" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/login" element={<AuthScreen/>} />
-
-      </Routes>
-      <Footer/>
-    </Router>
-    </div>
+      <CartProvider>
+        <div className=" bg-amber-50 bg-cover min-h-screen">
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/items" element={<ItemList />} />
+              <Route path="/product-detail" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart/>} />
+              <Route path="/login" element={<AuthScreen/>} />
+            </Routes>
+            <Footer/>
+          </Router>
+        </div>
+      </CartProvider>
     </AuthProvider>
-
   );
 };
 
